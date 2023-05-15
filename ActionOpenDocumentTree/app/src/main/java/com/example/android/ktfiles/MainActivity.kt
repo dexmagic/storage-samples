@@ -33,10 +33,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        // setContentView(R.layout.activity_main)
         setSupportActionBar(binding.toolbar)
 
-        val openDirectoryButton = findViewById<FloatingActionButton>(R.id.fab_open_directory)
+        val openDirectoryButton = binding.fabOpenDirectory
         openDirectoryButton.setOnClickListener {
             openDirectory()
         }

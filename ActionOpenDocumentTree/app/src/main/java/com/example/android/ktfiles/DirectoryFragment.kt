@@ -34,30 +34,36 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.android.ktfiles.databinding.ActivityMainBinding
+import com.example.android.ktfiles.databinding.FragmentDirectoryBinding
 
 /**
  * Fragment that shows a list of documents in a directory.
  */
 class DirectoryFragment : Fragment() {
+
+    private lateinit var binding: FragmentDirectoryBinding
+
     private lateinit var directoryUri: Uri
 
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: DirectoryEntryAdapter
 
     private lateinit var viewModel: DirectoryFragmentViewModel
-
+    
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentDirectoryBinding.inflate(inflater)
         directoryUri = arguments?.getString(ARG_DIRECTORY_URI)?.toUri()
             ?: throw IllegalArgumentException("Must pass URI of directory to open")
 
         viewModel = ViewModelProvider(this).get(DirectoryFragmentViewModel::class.java)
 
         val view = inflater.inflate(R.layout.fragment_directory, container, false)
-        recyclerView = view.findViewById(R.id.list)
+        recyclerView = binding.list
         recyclerView.layoutManager = LinearLayoutManager(recyclerView.context)
 
         adapter = DirectoryEntryAdapter(object : ClickListeners {
