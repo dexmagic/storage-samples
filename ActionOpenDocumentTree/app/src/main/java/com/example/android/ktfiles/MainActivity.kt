@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setSupportActionBar(binding.toolbar)
 
+        // FIXME: action button still not displaying on the screen!
         val openDirectoryButton = binding.fabOpenDirectory
         openDirectoryButton.setOnClickListener {
             openDirectory()
