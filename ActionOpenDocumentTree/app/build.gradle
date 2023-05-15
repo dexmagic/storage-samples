@@ -39,12 +39,12 @@ android {
     }
     namespace 'com.example.android.ktfiles'
 
-    def javaVersion = JavaVersion.VERSION_1_8
     compileOptions {
-        sourceCompatibility javaVersion
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = javaVersion.toString()
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 }
 
