@@ -50,7 +50,7 @@ class DirectoryFragment : Fragment() {
     private lateinit var adapter: DirectoryEntryAdapter
 
     private lateinit var viewModel: DirectoryFragmentViewModel
-    
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
