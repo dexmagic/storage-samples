@@ -38,6 +38,14 @@ android {
         viewBinding true
     }
     namespace 'com.example.android.ktfiles'
+
+    def javaVersion = JavaVersion.VERSION_1_8
+    compileOptions {
+        sourceCompatibility javaVersion
+    }
+    kotlinOptions {
+        jvmTarget = javaVersion.toString()
+    }
 }
 
 dependencies {
